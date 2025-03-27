@@ -1,7 +1,7 @@
 [![Nuget](https://img.shields.io/nuget/v/EasyTypeCastHelper?style=flat-square)](https://www.nuget.org/packages/EasyTypeCastHelper/) 
  [![Downloads](https://img.shields.io/nuget/dt/EasyTypeCastHelper?style=flat-square)](https://www.nuget.org/packages/EasyTypeCastHelper/)
  [![Paypal Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/donate/?hosted_button_id=SVZHLRTQ6H4VL)
-[![.NET](https://github.com/nfMalde/EasyTypeCastHelper/actions/workflows/build-master.yml/badge.svg?branch=main)](https://github.com/nfMalde/EasyTypeCastHelper/actions/workflows/build-master.yml)
+[![Pull Request Check](https://github.com/nfMalde/EasyTypeCastHelper/actions/workflows/pr.yml/badge.svg)](https://github.com/nfMalde/EasyTypeCastHelper/actions/workflows/pr.yml)
 # EasyTypeCastHelper
 
 EasyTypeCastHelper is a lightweight utility library designed to simplify type casting in your projects. It provides a set of helper functions to safely and efficiently cast between different types in C#.
