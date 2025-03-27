@@ -26,7 +26,7 @@ namespace EasyTypeCastHelperTests
 
         [Theory]
         [InlineData(123, 123U)]
-        [InlineData(0L, 0U)]
+        [InlineData(0, 0U)]
         public void ToUInt_ShouldConvertLongToUInt(int value, uint expected)
         {
             value.ToUInt().ShouldBe(expected);
