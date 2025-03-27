@@ -40,7 +40,7 @@ class Program
     static void Main(string[] args)
     {
         string value = "123";
-        int result = value.ToInt(value);
+        int result = value.ToInt();
         Console.WriteLine(result); // Output: 123
 
         // JSON Helper
