@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Copyright>2025 Malte Peters</Copyright>
+    <Description>EasyTypeCastHelper is a lightweight utility library designed to simplify type
+      casting in your projects</Description>
+    <PackageProjectUrl>https://github.com/nfMalde/EasyTypeCastHelper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nfMalde/EasyTypeCastHelper</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>Typecasting, typeconversion, helper</PackageTags>
+    <PackageReleaseNotes>
+<![CDATA[
+* Initial project setup.
+* Core functionality for type casting helper.
+]]>
+	</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+</Project>
