@@ -12,8 +12,11 @@
     <PackageTags>Typecasting, typeconversion, helper</PackageTags>
     <PackageReleaseNotes>
 <![CDATA[
-* Initial project setup.
-* Core functionality for type casting helper.
+* Added defaultValue to all nullable methods of StringExtensions
+* Added examples
+* Fixed code documentation
+* Updated Readme
+* Changed examples
 ]]>
 	</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
