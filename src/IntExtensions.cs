@@ -10,62 +10,70 @@ namespace EasyTypeCastHelper
     public static class IntExtensions
     {
         /// <summary>
-        /// Converts a long value to a uint.
+        /// Converts an integer value to a uint.
         /// </summary>
-        /// <param name="value">The long value to convert.</param>
+        /// <param name="value">The integer value to convert.</param>
         /// <returns>The converted uint value.</returns>
         public static uint ToUInt(this int value) => Convert.ToUInt32(value);
 
         /// <summary>
-        /// Converts a nullable long value to a nullable uint.
+        /// Converts a nullable integer value to a nullable uint.
         /// </summary>
-        /// <param name="value">The nullable long value to convert.</param>
-        /// <param name="defaultValue">The default value to return if the nullable long is null.</param>
+        /// <param name="value">The nullable integer value to convert.</param>
+        /// <param name="defaultValue">The default value to return if the nullable integer is null.</param>
         /// <returns>The converted nullable uint value, or the default value if the input is null.</returns>
         public static uint? ToUInt(this int? value, uint? defaultValue = null) => value.HasValue ? (uint?)Convert.ToUInt32(value.Value) : defaultValue;
 
         /// <summary>
-        /// Converts a long value to a ulong.
+        /// Converts an integer value to a ulong.
         /// </summary>
-        /// <param name="value">The long value to convert.</param>
+        /// <param name="value">The integer value to convert.</param>
         /// <returns>The converted ulong value.</returns>
         public static ulong ToULong(this int value) => Convert.ToUInt64(value);
 
         /// <summary>
-        /// Converts a nullable long value to a nullable ulong.
+        /// Converts a nullable integer value to a nullable ulong.
         /// </summary>
-        /// <param name="value">The nullable long value to convert.</param>
-        /// <param name="defaultValue">The default value to return if the nullable long is null.</param>
+        /// <param name="value">The nullable integer value to convert.</param>
+        /// <param name="defaultValue">The default value to return if the nullable integer is null.</param>
         /// <returns>The converted nullable ulong value, or the default value if the input is null.</returns>
         public static ulong? ToULong(this int? value, ulong? defaultValue = null) => value.HasValue ? (ulong?)Convert.ToUInt64(value.Value) : defaultValue;
 
         /// <summary>
-        /// Converts a long value to a short.
+        /// Converts an integer value to a short.
         /// </summary>
-        /// <param name="value">The long value to convert.</param>
+        /// <param name="value">The integer value to convert.</param>
         /// <returns>The converted short value.</returns>
         public static short ToShort(this int value) => Convert.ToInt16(value);
 
         /// <summary>
-        /// Converts a nullable long value to a nullable short.
+        /// Converts a nullable integer value to a nullable short.
         /// </summary>
-        /// <param name="value">The nullable long value to convert.</param>
-        /// <param name="defaultValue">The default value to return if the nullable long is null.</param>
+        /// <param name="value">The nullable integer value to convert.</param>
+        /// <param name="defaultValue">The default value to return if the nullable integer is null.</param>
         /// <returns>The converted nullable short value, or the default value if the input is null.</returns>
         public static short? ToShort(this int? value, short? defaultValue = null) => value.HasValue ? (short?)Convert.ToInt16(value.Value) : defaultValue;
 
-
+        /// <summary>
+        /// Converts an integer value to a ushort.
+        /// </summary>
+        /// <param name="value">The integer value to convert.</param>
+        /// <returns>The converted ushort value.</returns>
         public static ushort ToUShort(this int value) => Convert.ToUInt16(value);
 
+        /// <summary>
+        /// Converts a nullable integer value to a nullable ushort.
+        /// </summary>
+        /// <param name="value">The nullable integer value to convert.</param>
+        /// <param name="defaultValue">The default value to return if the nullable integer is null.</param>
+        /// <returns>The converted nullable ushort value, or the default value if the input is null.</returns>
         public static ushort? ToUShort(this int? value, ushort? defaultValue = null) => value.HasValue ? (ushort?)Convert.ToUInt16(value.Value) : defaultValue;
-
-
 
         /// <summary>
         /// Converts an integer to a long.
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /// <param name="value">The integer value to convert.</param>
+        /// <returns>The converted long value.</returns>
         public static long ToLong(this int value)
         {
             return Convert.ToInt64(value);
@@ -74,9 +82,9 @@ namespace EasyTypeCastHelper
         /// <summary>
         /// Converts a nullable integer to a nullable long.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="defaultValue"></param>
-        /// <returns></returns>
+        /// <param name="value">The nullable integer value to convert.</param>
+        /// <param name="defaultValue">The default value to return if the nullable integer is null.</param>
+        /// <returns>The converted nullable long value, or the default value if the nullable integer is null.</returns>
         public static long? ToLong(this int? value, long? defaultValue = null)
         {
             return value.HasValue ? Convert.ToInt64(value.Value) : defaultValue;

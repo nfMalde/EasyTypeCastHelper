@@ -1,5 +1,5 @@
 [![Nuget](https://img.shields.io/nuget/v/EasyTypeCastHelper?style=flat-square)](https://www.nuget.org/packages/EasyTypeCastHelper/) 
- [![Downloads](https://img.shields.io/nuget/dt/EasyTypeCastHelper?style=flat-square)](https://www.nuget.org/packages/EasyTypeCastHelper/)
+ [![Downloads](https://img.shields.io/nuget/dt/EasyTypeCastHelper)](https://www.nuget.org/packages/EasyTypeCastHelper/)
  [![Paypal Donate](https://img.shields.io/badge/donate-paypal-blue)](https://www.paypal.com/donate/?hosted_button_id=SVZHLRTQ6H4VL)
 [![Pull Request Check](https://img.shields.io/github/actions/workflow/status/nfMalde/EasyTypeCastHelper/pr.yml)](https://github.com/nfMalde/EasyTypeCastHelper/actions/workflows/pr.yml)
 # EasyTypeCastHelper 
@@ -40,14 +40,32 @@ class Program
     static void Main(string[] args)
     {
         string value = "123";
-        int result = value.ToInt(value);
+        int result = value.ToInt();
         Console.WriteLine(result); // Output: 123
 
+        int? myNullable = value.ToNullableInt();
+        string? withDefaultValue = null;
+
+        int? nullable2 = withDefaultValue.ToNullableInt(500); 
+
+        //All nullable methods have an defaultValue parameter. So if the source value is  null it returns the default value set by you (defaults to NULL)
+
+        Console.WriteLine($"{nullable2}"); // output: 500
+
+        // The StringHelper also provides for number conversion (all number types e.g. int, long, short, uint, ulong  etc...)
+        // NumberStyles and CultureInfo parameters
+        // Default:
+        // NumberStyles = Any
+        // CulureInfo = InvariantCulture
+
         // JSON Helper
+        // Uses System.Text.Json
+
 
         Test o = new() { Test = true };
 
         string json = o.ToJson();
+        
 
         Console.WriteLine(json); // Output {"Test": true}
 
@@ -501,54 +519,53 @@ The `ShortExtensions` class provides extension methods for converting `short` an
 
 
 ---
-
 ### `StringExtensions`
 
 The `StringExtensions` class provides extension methods for converting strings to various types.
 
 #### Methods
 
-- **`ToInt(this string? value, int defaultValue = 0)`**
+- **`ToInt(this string? value, int defaultValue = 0)`**  
   Converts the string to an integer. Returns the `defaultValue` if the conversion fails.
 
-- **`ToNullableInt(this string? value)`**
-  Converts the string to a nullable integer. Returns `null` if the conversion fails.
+- **`ToNullableInt(this string? value, int? defaultValue = null)`**  
+  Converts the string to a nullable integer. Returns the `defaultValue` if the conversion fails.
 
-- **`ToDouble(this string? value, double defaultValue = 0.0, NumberStyles numberStyles = NumberStyles.Any, CultureInfo? cultureInfo = null)`**
+- **`ToDouble(this string? value, double defaultValue = 0.0, NumberStyles numberStyles = NumberStyles.Any, CultureInfo? cultureInfo = null)`**  
   Converts the string to a double. Returns the `defaultValue` if the conversion fails.
 
-- **`ToNullableDouble(this string? value, NumberStyles numberStyles = NumberStyles.Any, CultureInfo? cultureInfo = null)`**
-  Converts the string to a nullable double. Returns `null` if the conversion fails.
+- **`ToNullableDouble(this string? value, double? defaultValue = null, NumberStyles numberStyles = NumberStyles.Any, CultureInfo? cultureInfo = null)`**  
+  Converts the string to a nullable double. Returns the `defaultValue` if the conversion fails.
 
-- **`ToBool(this string? value, bool defaultValue = false)`**
+- **`ToBool(this string? value, bool defaultValue = false)`**  
   Converts the string to a boolean. Returns the `defaultValue` if the conversion fails.
 
-- **`ToNullableBool(this string? value)`**
-  Converts the string to a nullable boolean. Returns `null` if the conversion fails.
+- **`ToNullableBool(this string? value, bool? defaultValue = null)`**  
+  Converts the string to a nullable boolean. Returns the `defaultValue` if the conversion fails.
 
-- **`ToDateTime(this string? value, DateTime defaultValue, DateTimeStyles dateTimeStyles = DateTimeStyles.None, CultureInfo? cultureInfo = null)`**
+- **`ToDateTime(this string? value, DateTime defaultValue, DateTimeStyles dateTimeStyles = DateTimeStyles.None, CultureInfo? cultureInfo = null)`**  
   Converts the string to a `DateTime`. Returns the `defaultValue` if the conversion fails.
 
-- **`ToNullableDateTime(this string? value, DateTimeStyles dateTimeStyles = DateTimeStyles.None, CultureInfo? cultureInfo = null)`**
-  Converts the string to a nullable `DateTime`. Returns `null` if the conversion fails.
+- **`ToNullableDateTime(this string? value, DateTime? defaultValue = null, DateTimeStyles dateTimeStyles = DateTimeStyles.None, CultureInfo? cultureInfo = null)`**  
+  Converts the string to a nullable `DateTime`. Returns the `defaultValue` if the conversion fails.
 
-- **`ToGuid(this string? value, Guid defaultValue)`**
+- **`ToGuid(this string? value, Guid defaultValue)`**  
   Converts the string to a `Guid`. Returns the `defaultValue` if the conversion fails.
 
-- **`ToNullableGuid(this string? value)`**
-  Converts the string to a nullable `Guid`. Returns `null` if the conversion fails.
+- **`ToNullableGuid(this string? value, Guid? defaultValue = null)`**  
+  Converts the string to a nullable `Guid`. Returns the `defaultValue` if the conversion fails.
 
-- **`ToEnum<T>(this string? value, T defaultValue) where T : struct`**
+- **`ToEnum<T>(this string? value, T defaultValue) where T : struct`**  
   Converts the string to an enum of type `T`. Returns the `defaultValue` if the conversion fails.
 
-- **`ToNullableEnum<T>(this string? value) where T : struct`**
-  Converts the string to a nullable enum of type `T`. Returns `null` if the conversion fails.
+- **`ToNullableEnum<T>(this string? value, T? defaultValue = null) where T : struct`**  
+  Converts the string to a nullable enum of type `T`. Returns the `defaultValue` if the conversion fails.
 
-- **`DeserializeFromJson<T>(this string value, JsonSerializerOptions? options = null)`**
-  Deserializes the string from JSON into an object of type `T`.
+- **`DeserializeFromJson<T>(this string value, JsonSerializerOptions? options = null)`**  
+  Deserializes the JSON string to an object of type `T`.
 
-- **`DeserializeFromNullableJson<T>(this string? value, JsonSerializerOptions? options = null)`**
-  Deserializes the string from JSON into an object of type `T`. Returns `default` if the string is `null`.
+- **`DeserializeFromNullableJson<T>(this string? value, T? defaultValue = default, JsonSerializerOptions? options = null)`**  
+  Deserializes the JSON string to a nullable object of type `T`. Returns the `defaultValue` if the string is `null`.
 
 ---
 
